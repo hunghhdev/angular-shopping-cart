@@ -9,6 +9,7 @@ import { Product } from '../product.model';
 export class ProductListComponent implements OnInit {
   @Input() products: Product[];
   @Output() onRemoveProduct = new EventEmitter();
+  @Output() onUpdateQuantity = new EventEmitter();
 
   ngOnInit(): void {}
 
@@ -16,7 +17,7 @@ export class ProductListComponent implements OnInit {
     this.onRemoveProduct.emit(id);
   }
 
-  updateQuantity(element: HTMLInputElement) {
-    console.log(element.value);
+  updateQuantity(id: number, element: HTMLInputElement): void {
+    this.onUpdateQuantity.emit({id, quantity: element.value});
   }
 }

@@ -3,7 +3,7 @@ import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   numberItems: number = 99;
@@ -36,15 +36,24 @@ export class AppComponent {
   ];
 
   removeProduct(id: number) {
-    let index = this.products.findIndex(item => item.id == id);
-    if(index !== -1){
+    let index = this.products.findIndex((item) => item.id == id);
+    if (index !== -1) {
       this.products.splice(index, 1);
     }
+    this.count();
+  }
 
+  updateQuantity(product: { id: number; quantity: number }) {
+    let index = this.products.findIndex((item) => item.id == product.id);
+    this.products[index].quantity = product.quantity;
+    this.count();
+  }
+
+  count() {
     let numberItems = 0;
     let subToTal = 0;
 
-    for(let item of this.products){
+    for (let item of this.products) {
       numberItems += item.quantity;
       subToTal += item.price * item.quantity;
     }

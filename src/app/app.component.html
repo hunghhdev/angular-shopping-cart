@@ -1,7 +1,7 @@
 <main>
   <app-header [numberItems]="numberItems"></app-header>  
   <section class="container">
-    <app-product-list [products]="products" (onRemoveProduct)="removeProduct($event)"></app-product-list>
+    <app-product-list [products]="products" (onRemoveProduct)="removeProduct($event)" (onUpdateQuantity)="updateQuantity($event)"></app-product-list>
   </section>
 
   <section class="container">
