@@ -17,7 +17,7 @@
 
     <div class="col right">
       <div class="quantity">
-        <input type="number" class="quantity" step="1" [value]="item.quantity" />
+        <input #inputQuantityElement type="number" class="quantity" step="1" [value]="item.quantity" (input)="updateQuantity(inputQuantityElement)"/>
       </div>
 
       <div class="remove">

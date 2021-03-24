@@ -42,4 +42,8 @@ export class ProductListComponent implements OnInit {
     let index = this.products.findIndex(item => item.id == id);
     this.products.splice(index, 1);
   }
+
+  updateQuantity(element) {
+    console.log(element.value);
+  }
 }
