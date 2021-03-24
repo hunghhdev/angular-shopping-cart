@@ -4,7 +4,7 @@ import { Product } from '../product.model';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
       description: 'Description for product item number 1',
       thumbnail: 'https://via.placeholder.com/200x150',
       price: 5.99,
-      quantity: 2
+      quantity: 2,
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
       description: 'Description for product item number 2',
       thumbnail: 'https://via.placeholder.com/200x150',
       price: 9.99,
-      quantity: 2
+      quantity: 2,
     },
     {
       id: 3,
@@ -30,14 +30,16 @@ export class ProductListComponent implements OnInit {
       description: 'Description for product item number 3',
       thumbnail: 'https://via.placeholder.com/200x150',
       price: 9.99,
-      quantity: 2
-    }
-  ]
+      quantity: 2,
+    },
+  ];
 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  removeProduct(id: number): void {
+    let index = this.products.findIndex(item => item.id == id);
+    this.products.splice(index, 1);
   }
-
 }
