@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
       name: 'PRODUCT ITEM NUMBER 1',
       description: 'Description for product item number 1',
       thumbnail: 'https://via.placeholder.com/200x150',
-      price: 5.99,
+      price: 500000,
       quantity: 2,
     },
     {
