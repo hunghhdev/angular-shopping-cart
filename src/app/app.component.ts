@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  numberItems: number = 99;
-  subTotal: number = 460.99;
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    this.count();
+  }
+  numberItems: number = 0;
+  subTotal: number = 0;
   products: Product[] = [
     {
       id: 1,
@@ -23,7 +26,7 @@ export class AppComponent {
       description: 'Description for product item number 2',
       thumbnail: 'https://via.placeholder.com/200x150',
       price: 9.99,
-      quantity: 2,
+      quantity: 5,
     },
     {
       id: 3,
