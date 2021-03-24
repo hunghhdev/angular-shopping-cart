@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BodyComponent } from './body/body.component';
-import { FooterComponent } from './footer/footer.component';
+import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { PromoCodeComponent } from './promo-code/promo-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent,
-    FooterComponent
+    CartSummaryComponent,
+    ProductListComponent,
+    PromoCodeComponent
   ],
   imports: [
     BrowserModule
